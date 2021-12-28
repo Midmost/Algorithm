@@ -7,7 +7,14 @@
 * 알고리즘: array, dynamic programming, divide and conquer(?), 완전탐색
 * 자료구조: array
 * 문제 해결 과정: 
-1. array의 모든 요소들을 비교하여 가장 큰 수 a와 가장 작은 수 b를 찾는다.  
+1. array의 모든 요소들을 다 더한 것을 sum이라고 하자.
+2. 가장 끝 수 부터 하나씩 요소를 뺀 것을 temp 에 담는다
+3. 가장 첫 수 부터 하나씩 요소를 뺀 것을 temp2에 담는다
+4. if temp > sum 라면 temp를 리턴
+5. if temp2 > sum 라면 temp2를 리턴
+6. temp 와 temp2를 비교해서 더 큰 수를 리턴
+
+
 ~~ 2. subarray는 가장 큰 수를 포함하여 가장 작은수까지(미포함) 인접한 모든 요소들을 더한다. ~~
 
 
