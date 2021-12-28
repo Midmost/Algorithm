@@ -17,7 +17,7 @@ i와 j를 리턴
 ---
 
 첫번째 답 (8분걸림)
-```
+```python3
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i,v1 in enumerate(nums):
@@ -27,7 +27,7 @@ class Solution:
                     return [i,j]
 ```
 
-```
+```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i,v1 in enumerate(nums):
