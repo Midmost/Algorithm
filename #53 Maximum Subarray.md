@@ -22,3 +22,33 @@
 
 ---
 ```python3
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        
+        # array의 모든 요소들을 다 더한 것을 sum이라고 하자
+        sums = 0;
+        for i in nums:
+            sums = i + sums
+        
+        # 가장 첫 수 부터 하나씩 요소를 뺀 것을 temp 에 담는다
+        temp = nums;
+        a = len(nums) - 1
+        for j in nums:            
+            left = temp.pop(0)
+            sumLeft = sums - left
+            # if left > sum 라면 temp를 리턴
+            if sumLeft > sums:
+                print(sumLeft)
+                
+            
+        
+        
+
+# if temp2 > sum 라면 temp2를 리턴
+# temp 와 temp2를 비교해서 더 큰 수를 리턴
+₩₩₩            
+            
+            
+        
+            
+        
