@@ -1,0 +1,34 @@
+# Question: #53 Maximum Subarray
+#### 2021/12/30
+
+
+## Problem-solving steps
+* 문제 해석: s[i] == s[i + 1] -> true, if s[i] != s[i + 1] sort(s) 
+* 알고리즘: 없음
+* 자료구조: stack
+* 문제 해결 과정:  
+1. string을 space를 기준으로 split
+2. 잘라진 s를 stack에 쌓는다. (FILO)
+3. 맨 마지막거를 꺼내서(꺼낸거는 pop) 맨 처음거랑 같은지 비교 -> 같으면 true
+4. 3번 과정을 반복(반복문 종료는 s[len(s) / 2] 과 같아지면)
+
+
+
+---
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        char_list = s.split(" ")
+        # char_list 에 들어있는 값들이 순서대로 넣어졌을까...? append랑 같은 역할 하려나?
+        # 걍 혹시 모르니 stack에 넣자
+        stack = []
+        for i in range(len(char_list)):
+             stack.append(char_list[i])
+            
+        last = stack.pop()
+        for i in char_list:
+            if last == i:
+                return True
+            else:
+                return False
+```
