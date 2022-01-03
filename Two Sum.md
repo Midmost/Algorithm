@@ -39,3 +39,32 @@ class Solution:
 
 시간부족으로 더 만들지 못 함. 
 선생님 답변을 보며 수정할 부분
+
+---
+## 두번째 풀이
+index i 를 기준점으로 잡자.  
+
+일반화: '더해서 타겟이 되는 두 수의 인덱스'를 구하여라  
+base: ?   
+general:  
+target = A[i] + A[j]  
+A[i] = target - A[j] ( i < j )  
+여기까지는 천천히 생각하면 구할 수 있겠음. 문제는 이 다음에 코드로 표현하는 방법에서 또 틀림.  
+
+```python3
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        indices = dict()
+        
+        # (key, value) 로 알고 있었는데 왜 (value, index)로 하신건지...?
+        
+        for j, v in enumerate(nums):
+            if (target - v) in indices.keys(): #target - v 가 A[i]
+                return[indices[target - v], j]
+            else:
+                indices[v] = j
+        return 0
+                
+```
+
+
