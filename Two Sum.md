@@ -49,6 +49,10 @@ base: ?
 general:  
 target = A[i] + A[j]  
 A[i] = target - A[j] ( i < j )  
+즉, 구하고자 하는 건  
+
+[target - A[j], A[j]]  
+
 여기까지는 천천히 생각하면 구할 수 있겠음. 문제는 이 다음에 코드로 표현하는 방법에서 또 틀림.  
 
 ```python3
@@ -56,15 +60,16 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         indices = dict()
         
-        # (key, value) 로 알고 있었는데 왜 (value, index)로 하신건지...?
+        # (key, value) 로 알고 있었는데 왜 (value, index)로 하신건지...? key 가 인덱스 역할을 하는 게 아니었던 것인가!
         
         for j, v in enumerate(nums):
-            if (target - v) in indices.keys(): #target - v 가 A[i]
+            if (target - v) in indices.keys(): #target - v 가 A[i] -> 여기서 indices.keys()가 위의 이유로 이해가 안 감
                 return[indices[target - v], j]
+            #위 세 줄을 못 만들어 냈음
             else:
                 indices[v] = j
         return 0
-                
+        
 ```
 
 
