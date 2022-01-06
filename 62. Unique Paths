@@ -1,0 +1,31 @@
+# Question: 62. Unique Paths
+#### 2021/01/06
+
+
+## Problem-solving steps
+* 문제 해석:
+* 알고리즘: 
+* 자료구조: 
+* 문제 해결 과정: 
+
+
+
+---
+
+
+Dynamic programming 관련해서
+```python3
+        # -1로 이루어진 2차원 배열을 m과 n의 길이 만큼 늘어나게 만들고 싶었다.
+        #처음에 내가 낸 값
+        k = m * n
+        cache = [-1] * (k+1)
+    
+        #2차원 배열로 이렇게 하면 안 되나...?ㅋㅋㅋㅋㅋㅋㅋㅋ
+        cache2 = [[-1 for _ in range(n)],[-1 for _ in range(m)]]
+        
+        #쌤 쓰신거 
+        cache = [[-1 for _ in range(n)] for _ in range(m)]
+```
+
+```python3
+```
