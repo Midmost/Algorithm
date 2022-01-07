@@ -1,0 +1,40 @@
+# Question:
+#### 2021/01/01
+
+
+## Problem-solving steps
+* 문제 해석: root를 줄테니 inorder traversal 을 리턴해라
+* 알고리즘: DFS, Stack
+* 자료구조: Tree
+* 문제 해결 과정: 
+what is inorder traversal?
+            
+Algorithm Inorder(tree)
+   1. Traverse the left subtree, i.e., call Inorder(left-subtree)
+   2. Visit the root.
+   3. Traverse the right subtree, i.e., call Inorder(right-subtree)
+   
+   처음에 왜 왼쪽 - 중앙 - 오른쪽인데 루트부터 시작하는지 이해가 안갔었다. 3번부터 시작할 줄 알았는데 그렇진 않았다. 
+   
+### 일반화     
+1. 나를 기준으로 왼쪽에 노드가 있는가?
+2. 있으면 그 노드로 간다
+2-1. 옮겨간 노드에 왼쪽에 노드가 있는가? 있으면 2번을 다시 실행(2와 2-1을 끝날 때 까지 반복, 끝나면 3을 실행)
+3. 없으면 나를 리턴한다. (answer배열에 값을 집어넣는다.)
+4. 다음 인덱스로 넘어간다. 
+5. 인덱스값이 null이라면 다음 인덱스로 넘어간다.
+6. 1~5 단계를 반복
+
+궁금증: 이 문제를 어떻게 재귀로 풀 지? 
+
+        base: 항상 root에서 시작함
+        general: 
+        
+   
+
+
+---
+
+```python3
+
+```
