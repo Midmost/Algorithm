@@ -1,0 +1,42 @@
+# Question:
+#### 2021/01/13
+
+
+## Problem-solving steps
+* 문제 해석: tree의 지정범위만큼 노드 읽어오기
+* 알고리즘: tree
+* 자료구조: None
+* 문제 해결 과정:   
+
+일반화: low부터 high까지 범위에 해당하는 노드의 값을 모두 더한 수를 구하여라
+점화식: f(?????) = low부터 high 사이 모든 노드 값을 더한 수
+base: root가 없는 경우
+general: 
+
+sort(root)
+sum(root[row:high])
+
+
+---
+
+```python3
+
+class Solution:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+        res = []
+
+        #base
+        if root is None:
+            return 0
+        
+        #general
+        if root.left > low and root.left < high:
+            res.append(left.val)
+        if root.right > low and root.right < high:
+            res.append(right.val)
+            
+        sorted(res)
+        answer = sum(res[row:high])
+        return answer
+
+```
