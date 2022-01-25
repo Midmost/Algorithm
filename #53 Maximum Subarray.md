@@ -64,7 +64,34 @@ class Solution:
         
 ```
 틀림. s 부분이 잘못되었을 거 같음. 다시 알아보자 
-            
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_current = update = nums[0]
+        for i in range(len(nums)):
+            c = nums[i]
+            max_current = max(c, max_current + c)
+            if max_current > update:
+                update = max_current
+        return update
+        
+        
+```
+답은 통과했지만 max_current 부분이 일종의 재귀형태로 업데이트 되는 모양인데 이 코드를 생각해내지 못했다.
+아래 if구문을 방금 이해한 max_current처럼 좀 더 재귀모양으로 정리하자면
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_current = update = nums[0]
+        for i in range(len(nums)):
+            c = nums[i]
+            max_current = max(c, max_current + c)
+            update = max(update, max_current)
+        return update
+                
+```
             
         
             
