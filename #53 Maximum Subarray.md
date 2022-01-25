@@ -92,7 +92,21 @@ class Solution:
         return update
                 
 ```
-            
+틀림. 반례를 뺴먹음
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_current = update = nums[0]
+        for i in range(1, len(nums)): 
+            #처음에 0을 박아놓아야 함 왜냐하면 가장 첫번째 인덱스 값이 제일 큰 경우가 있을 수 있기 때문
+            #하지만 비교하는 건 nums[1]와 nums[0] + nums[1] 이기 때문에 for문은 1부터 시작해야함
+            c = nums[i]
+            max_current = max(c, max_current + c)
+            if max_current > update:
+                update = max_current
+        return update
+```
         
             
         
