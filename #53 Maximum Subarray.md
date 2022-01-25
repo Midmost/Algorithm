@@ -46,7 +46,24 @@ class Solution:
 
 # if temp2 > sum 라면 temp2를 리턴
 # temp 와 temp2를 비교해서 더 큰 수를 리턴
-₩₩₩            
+
+---
+
+# 두번째 시도
+
+![카데인연습](https://user-images.githubusercontent.com/11972120/150895317-ff987943-ea02-4631-95d4-18db37163f57.jpg)
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            c = nums[i]
+            s = sum(nums[:i])
+            update = max(c,s)
+        return update
+        
+```
+틀림. s 부분이 잘못되었을 거 같음. 다시 알아보자 
             
             
         
