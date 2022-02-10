@@ -15,4 +15,55 @@
 
 ```python3
 
+class Solution:
+    
+    import collections
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        # 일반화: thr level order traversal of its nodes' values. 
+        # 내가 너무 단순하게 생각하는 것일 수도 있는데 그냥 맨 처음 루트만 제외하고 나머지는 두개씩 잘라서 리스트로 만들면 안되나?
+        # 점화식: f(root) = next level
+        #     f(20) = [15, 7]
+        
+        # print([root.left, root.right])
+        
+        
+        def f(self, root):
+            if root is None:
+                return []
+            
+            return [root.left.val, root.right.val]
+        
+        
+        res = collections.deque([[self.f(root)]])
+        res.appendleft([root.val])
+        return res
+
+```
+
+이렇게 하면 attribute error가 뜸
+
+```python3
+class Solution:
+    
+    import collections
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        # 일반화: thr level order traversal of its nodes' values. 
+        # 내가 너무 단순하게 생각하는 것일 수도 있는데 그냥 맨 처음 루트만 제외하고 나머지는 두개씩 잘라서 리스트로 만들면 안되나?
+        # 점화식: f(root) = next level
+        #     f(20) = [15, 7]
+        
+        # print([root.left, root.right])
+        
+        
+        def f(self, root):
+            if root is None:
+                return []
+            
+            return [root.left.val, root.right.val]
+        
+        
+        res = collections.deque([[f(self, root)]])
+        res.appendleft([root.val])
+        return res
+        
 ```
